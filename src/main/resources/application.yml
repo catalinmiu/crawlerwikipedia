@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: crawlerwikipedia
+  datasource:
+    url: jdbc:postgresql://localhost:5432/acm?currentSchema=world
+    username: root
+    password: 'root'
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate.ddl-auto: none
+    properties:
+      hibernate:
+        ddl-auto: none
+  liquibase:
+    change-log: classpath:changelog/db.changelog-master.xml
+  sql:
+    init:
+      mode: never
+
+props:
+  list-of-countries-wiki-url: https://en.wikipedia.org/wiki/List_of_countries_by_population_in_2010
+  list-of-largest-cities-wiki-url: https://en.wikipedia.org/wiki/List_of_largest_cities
+  country-name-exceptions:
+    '[DR Congo]': Democratic Republic of the Congo

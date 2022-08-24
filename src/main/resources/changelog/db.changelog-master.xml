@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+    <changeSet id="20220823_0753" author="CMI">
+        <createSequence cycle="false"
+                        dataType="int"
+                        incrementBy="1"
+                        maxValue="999999999"
+                        minValue="1"
+                        sequenceName="seq_countries"
+                        startValue="1"/>
+        <createTable tableName="countries">
+            <column name="country_id" type="int" defaultValueSequenceNext="seq_countries">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="country_name" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="population" type="int"></column>
+            <column name="area" type="double"></column>
+        </createTable>
+        <createSequence cycle="false"
+                        cacheSize="1"
+                         dataType="int"
+                         incrementBy="1"
+                         maxValue="999999999"
+                         minValue="1"
+                         sequenceName="seq_cities"
+                         startValue="1"/>
+        <createTable tableName="cities">
+            <column name="city_id" type="int" defaultValueSequenceNext="seq_cities">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="country_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_city_country_id" references="countries(country_id)"/>
+            </column>
+            <column name="name" type="varchar"></column>
+            <column name="population" type="integer"></column>
+            <column name="density" type="double"></column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
