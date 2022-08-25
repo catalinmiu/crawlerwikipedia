@@ -4,12 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import ro.pago.crawlerwikipedia.service.WikipediaCrawlerService;
+import ro.pago.crawlerwikipedia.service.CityCountriesManagerService;
 
 @SpringBootApplication
 @RequiredArgsConstructor
 public class CrawlerwikipediaApplication implements CommandLineRunner {
-    private final WikipediaCrawlerService wikipediaCrawlerService;
+    private final CityCountriesManagerService cityCountriesManagerService;
 
     public static void main(String[] args) {
         SpringApplication.run(CrawlerwikipediaApplication.class, args);
@@ -17,6 +17,6 @@ public class CrawlerwikipediaApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        wikipediaCrawlerService.saveAllCountriesAndCitiesInDB();
+        cityCountriesManagerService.saveAllCountriesAndCitiesInDB();
     }
 }

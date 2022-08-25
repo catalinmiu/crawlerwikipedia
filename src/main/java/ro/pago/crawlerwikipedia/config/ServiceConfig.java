@@ -16,5 +16,5 @@ public class ServiceConfig {
     public static final String PREFIX = "props";
     private String listOfCountriesWikiUrl;
     private String listOfLargestCitiesWikiUrl;
-    private HashMap<String, String> countryNameExceptions;
+    private HashMap<String, String> countryNameExceptionsMap;
 }

@@ -20,5 +20,5 @@ spring:
 props:
   list-of-countries-wiki-url: https://en.wikipedia.org/wiki/List_of_countries_by_population_in_2010
   list-of-largest-cities-wiki-url: https://en.wikipedia.org/wiki/List_of_largest_cities
-  country-name-exceptions:
+  country-name-exceptions-map:
     '[DR Congo]': Democratic Republic of the Congo
