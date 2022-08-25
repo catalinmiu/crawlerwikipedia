@@ -25,8 +25,6 @@ public class WikipediaCrawlerService {
     private final CountryTableService countryTable;
     private final CityTableService cityTable;
     private final ServiceConfig serviceConfig;
-    private static final String DEMOCRATIC_REPUBLIC_OF_THE_CONGO_SHORT_VERSION = "DR Congo";
-    private static final String DEMOCRATIC_REPUBLIC_OF_THE_CONGO = "Democratic Republic of the Congo";
 
     public void saveAllCountriesAndCitiesInDB() {
 

@@ -14,13 +14,13 @@ public class CityTableService extends TableService {
 
     static final String TABLE_ROW_XPATH = "//table[contains(@class, 'wikitable')]/tbody/tr";
     static final String EMPTY_VALUE = "—";
+    int densityColumnIndex = 6;
+    int cityColumnIndex = 0;
 
     public CityTableService() {
         countryNameColumnIndex = 1;
         populationColumnIndex = 2;
     }
-    int densityColumnIndex = 6;
-    int cityColumnIndex = 0;
 
     public List<CityDTO> getAllCities(Document document) {
         Elements elements = document.selectXpath(TABLE_ROW_XPATH);
